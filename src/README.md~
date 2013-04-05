@@ -1,0 +1,3 @@
+Headless burp scanner extension
+Usage: 
+$ sh scanner.sh www.example.com example "CookieExample=Example"

@@ -1,0 +1,9 @@
+javac burp/*.java 
+jar -cf BurpExtender.jar burp/BurpExtender.class
+burp=$(ls -1t burp*.jar | head -n1)
+
+#java -Xmx1024m -Djava.awt.headless=true -classpath  BurpExtender.jar:burpsuite_pro_v1.5.01.jar burp.StartBurp
+rm -rf /tmp/burp*
+rm mene.*
+java -Xmx1024m -classpath  BurpExtender.jar:"$burp" burp.StartBurp www.meneame.net mene "CookieTest=Cookie"
+#java -Xmx1024m -Djava.awt.headless=true -classpath BurpExtender.jar:burpsuite_pro_v1.5.01.jar burp.StartBurp meneame.net 
