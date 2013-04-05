@@ -45,12 +45,13 @@ public class BurpExtender implements IBurpExtender {
     public BufferedWriter outurls;
     public String cookies;
     public Date lastRequest;
-    public boolean scanQuit = false;                    // Quit after scanning: false = yes, true = prompt
+    public boolean scanQuit = false;                          // Quit after scanning: false = yes, true = prompt
     public boolean monitorThread = false;
     public Vector<IScanQueueItem> scanqueue = new Vector<IScanQueueItem>();
-    public File restoreState = new File("sodacan.zip"); // Configuration used for command-line scanning
-    public int delay = 30;                              // Number of seconds to wait in loop for scanning and spidering
-                                                        // to complete
+    public File restoreState = new File("configuration.zip"); // Configuration used for command-line scanning
+    public int delay = 30;                                    // Number of seconds to wait in loop for scanning and
+                                                              // spidering
+                                                              // to complete
 
     String header = "<html><head><style type=\"text/css\">\n"
             + "H1 { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 1.6em; font-weight: bold; line-height: 1.0em; }\n"
