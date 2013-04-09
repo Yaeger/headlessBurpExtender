@@ -310,43 +310,41 @@ public class BurpExtender implements IBurpExtender {
     private int getType(final String type) {
 
         // classify some of the most common vulnerabilities under a specific types
-        switch (type) {
+        if (type.equals("SQL injection")) {
+            return 1;
 
-            case "SQL injection" :
-                return 1;
+        } else if (type.equals("Password field with autocomplete enabled")) {
+            return 2;
 
-            case "Password field with autocomplete enabled" :
-                return 2;
+        } else if (type.equals("User agent-dependent response")) {
+            return 3;
 
-            case "User agent-dependent response" :
-                return 3;
+        } else if (type.equals("Cookie scoped to parent domain")) {
+            return 4;
 
-            case "Cookie scoped to parent domain" :
-                return 4;
+        } else if (type.equals("Cross-domain Referer leakage")) {
+            return 5;
 
-            case "Cross-domain Referer leakage" :
-                return 5;
+        } else if (type.equals("Cross-domain script include")) {
+            return 6;
 
-            case "Cross-domain script include" :
-                return 6;
+        } else if (type.equals("Cookie without HttpOnly flag set")) {
+            return 7;
 
-            case "Cookie without HttpOnly flag set" :
-                return 7;
+        } else if (type.equals("Email addresses disclosed")) {
+            return 8;
 
-            case "Email addresses disclosed" :
-                return 8;
+        } else if (type.equals("Credit card numbers disclosed")) {
+            return 9;
 
-            case "Credit card numbers disclosed" :
-                return 9;
+        } else if (type.equals("Content type incorrectly stated")) {
+            return 10;
 
-            case "Content type incorrectly stated" :
-                return 10;
+        } else if (type.equals("Robots.txt file")) {
+            return 11;
 
-            case "Robots.txt file" :
-                return 11;
-
-            default :
-                return 12;
+        } else {
+            return 12;
         }
 
     }
